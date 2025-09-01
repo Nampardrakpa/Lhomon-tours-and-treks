@@ -185,7 +185,7 @@ const About = () => {
         </section> */}
 
         {/* Call to Action */}
-{/*         <section className="text-center">
+        <section className="text-center">
           <Card className="bg-gradient-to-r from-primary to-primary-hover text-primary-foreground border-0">
             <CardContent className="p-8">
               <h2 className="text-2xl font-semibold mb-4">Ready to Discover Bhutan?</h2>
@@ -198,7 +198,7 @@ const About = () => {
               </Button>
             </CardContent>
           </Card>
-        </section> */}
+        </section>
       </div>
 
       <Footer />
