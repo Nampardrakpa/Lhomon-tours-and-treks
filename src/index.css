@@ -1,0 +1,228 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Lhomon Tours Design System - Bhutanese-inspired colors and aesthetics */
+
+@layer base {
+  :root {
+    /* Bhutanese-inspired color palette */
+    --background: 0 0% 100%;
+    --foreground: 150 40% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 150 40% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 40% 12%;
+
+    /* Deep forest green (primary) */
+    --primary: 150 60% 20%;
+    --primary-foreground: 0 0% 98%;
+    --primary-hover: 150 60% 15%;
+
+    /* Warm saffron accent */
+    --accent: 35 85% 55%;
+    --accent-foreground: 150 40% 12%;
+    --accent-hover: 35 85% 50%;
+
+    /* Neutral secondary */
+    --secondary: 150 10% 95%;
+    --secondary-foreground: 150 40% 12%;
+
+    --muted: 150 10% 96%;
+    --muted-foreground: 150 20% 45%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 150 15% 88%;
+    --input: 150 15% 88%;
+    --ring: 150 60% 20%;
+
+    /* Bhutanese-inspired custom colors */
+    --monastery-gold: 45 90% 65%;
+    --mountain-mist: 200 25% 92%;
+    --prayer-flag-blue: 210 75% 55%;
+    --rhododendron-pink: 330 70% 75%;
+    --snow-peak: 0 0% 98%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary) / 0.9), hsl(var(--accent) / 0.8));
+    --gradient-card: linear-gradient(145deg, hsl(var(--background)), hsl(var(--muted)));
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px hsl(var(--primary) / 0.1);
+    --shadow-medium: 0 8px 30px hsl(var(--primary) / 0.15);
+    --shadow-strong: 0 15px 40px hsl(var(--primary) / 0.2);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    line-height: 1.6;
+  }
+
+  /* Smooth scrolling for navigation */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Typography scale */
+  .text-hero {
+    @apply text-5xl md:text-6xl font-bold tracking-tight;
+  }
+
+  .text-section-title {
+    @apply text-3xl md:text-4xl font-semibold;
+  }
+
+  .text-card-title {
+    @apply text-xl font-semibold;
+  }
+}
+
+@layer utilities {
+  /* Custom shadow utilities */
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  .shadow-medium {
+    box-shadow: var(--shadow-medium);
+  }
+  .shadow-strong {
+    box-shadow: var(--shadow-strong);
+  }
+}
+
+@layer components {
+  /* Custom component styles using design system */
+  .btn-hero {
+    @apply bg-gradient-to-r from-accent to-accent-hover text-accent-foreground px-8 py-4 rounded-lg font-semibold text-lg 
+           shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-primary text-primary px-6 py-3 rounded-lg font-medium
+           hover:bg-primary hover:text-primary-foreground transition-all duration-300;
+  }
+
+  .card-elevated {
+    @apply bg-card rounded-xl shadow-soft hover:shadow-medium transition-all duration-300 overflow-hidden;
+  }
+
+  .gradient-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/40 to-transparent;
+  }
+
+  /* Navigation styles */
+  .nav-link {
+    @apply text-foreground hover:text-accent transition-colors duration-200 font-medium;
+  }
+
+  .nav-dropdown {
+    @apply absolute top-full left-0 bg-card border border-border rounded-lg shadow-medium py-2 min-w-48 z-50;
+  }
+
+  /* Tour card animations */
+  .tour-card {
+    @apply card-elevated cursor-pointer;
+  }
+
+
+  .tour-card:hover .tour-image {
+    @apply scale-110;
+  }
+
+  .tour-image {
+    @apply transition-transform duration-500 ease-out;
+  }
+
+  /* Gallery grid */
+  .gallery-grid {
+    @apply columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-4 space-y-4;
+  }
+
+  .gallery-item {
+    @apply break-inside-avoid rounded-lg overflow-hidden shadow-soft hover:shadow-medium 
+           transition-all duration-300 cursor-pointer;
+  }
+
+  /* Loading animations */
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Bhutanese-inspired decorative elements */
+  .prayer-flags {
+    @apply absolute top-0 left-0 w-full h-2 bg-gradient-to-r 
+           from-prayer-flag-blue via-monastery-gold to-rhododendron-pink opacity-60;
+  }
+}
