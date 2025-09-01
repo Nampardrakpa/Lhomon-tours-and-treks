@@ -353,7 +353,7 @@ const Festivals = () => {
                 spiritual significance and cultural context of these sacred celebrations.
               </p>
               <Button size="lg" asChild>
-                <a href="/contact">Plan Your Festival Journey</a>
+                <Link to="/contact#enquiry">Plan Your Festival Journey</Link> 
               </Button>
             </CardContent>
           </Card>
