@@ -1,5 +1,7 @@
-import { useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useState } from 'react';
+import { useToast } from '@/hooks/use-toast';
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -8,16 +10,12 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Checkbox } from '@/components/ui/checkbox';
-import { useToast } from '@/hooks/use-toast';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
 import { Resend } from 'resend';
 
 // Initialize Resend with your API key
 const resend = new Resend(import.meta.env.VITE_RESEND_API_KEY);
 
 const Contact = () => {
-  const [searchParams] = useSearchParams();
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     fullName: '',
@@ -28,17 +26,10 @@ const Contact = () => {
     endDate: '',
     adults: 2,
     children: 0,
-    selectedTour: '',
     budget: '',
     message: '',
     agreeTerms: false
   });
-  useEffect(() => {
-    const tourSlug = searchParams.get('tour');
-    if (tourSlug) {
-      setFormData(prev => ({ ...prev, selectedTour: tourSlug }));
-    }
-  }, [searchParams]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -55,7 +46,7 @@ const Contact = () => {
     try {
       await resend.emails.send({
         from: 'Lightfall <lightfallzedis@gmail.com>',
-        to: ['nampardrakpa@gmail.com'],
+        to: ["nampardrakpa@gmail.com"],
         subject: `New Enquiry from ${formData.fullName}`,
         html: `
           <p><strong>Name:</strong> ${formData.fullName}</p>
@@ -66,7 +57,6 @@ const Contact = () => {
           <p><strong>End Date:</strong> ${formData.endDate}</p>
           <p><strong>Adults:</strong> ${formData.adults}</p>
           <p><strong>Children:</strong> ${formData.children}</p>
-          <p><strong>Tour:</strong> ${formData.selectedTour}</p>
           <p><strong>Budget:</strong> ${formData.budget}</p>
           <p><strong>Message:</strong> ${formData.message}</p>
         `,
@@ -86,7 +76,6 @@ const Contact = () => {
         endDate: '',
         adults: 2,
         children: 0,
-        selectedTour: '',
         budget: '',
         message: '',
         agreeTerms: false
@@ -222,16 +211,6 @@ const Contact = () => {
                         onChange={(e) => setFormData(prev => ({ ...prev, children: parseInt(e.target.value) }))}
                       />
                     </div>
-                  </div>
-
-                  <div>
-                    <Label htmlFor="selectedTour">Tour of Interest</Label>
-                    <Input
-                      id="selectedTour"
-                      placeholder="Enter tour name or write 'Other'"
-                      value={formData.selectedTour}
-                      onChange={(e) => setFormData(prev => ({ ...prev, selectedTour: e.target.value }))}
-                    />
                   </div>
 
                   <div>
