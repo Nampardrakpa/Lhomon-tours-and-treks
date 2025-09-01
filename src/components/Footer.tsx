@@ -54,7 +54,7 @@ const Footer = () => {
           {/* Newsletter and Social */}
           <div className="space-y-4">
             <h4 className="font-semibold text-lg">Stay Connected</h4>
-            <div className="space-y-3">
+{/*             <div className="space-y-3">
               <div className="flex space-x-2">
                 <Input
                   type="email"
@@ -64,7 +64,7 @@ const Footer = () => {
                 <Button variant="secondary" size="sm">
                   Subscribe
                 </Button>
-              </div>
+              </div> */}
               <div className="flex space-x-4">
                 <a 
                   href="https://facebook.com/lhomontours" 
@@ -97,9 +97,9 @@ const Footer = () => {
         <div className="mt-8 pt-8 border-t border-primary-foreground/20">
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-2 sm:space-y-0">
             <p className="text-sm text-primary-foreground/70">
-              © 2024 Lhomon Tours and Treks. All rights reserved.
+              © 2025 Lhomon Tours and Treks. All rights reserved.
             </p>
-            <div className="flex space-x-4 text-sm">
+{/*             <div className="flex space-x-4 text-sm">
               <a 
                 href="https://example.com/privacy" 
                 className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
@@ -112,7 +112,7 @@ const Footer = () => {
               >
                 Terms & Conditions
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
