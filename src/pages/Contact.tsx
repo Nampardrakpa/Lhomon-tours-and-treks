@@ -33,7 +33,6 @@ const Contact = () => {
     message: '',
     agreeTerms: false
   });
-
   useEffect(() => {
     const tourSlug = searchParams.get('tour');
     if (tourSlug) {
