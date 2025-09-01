@@ -38,9 +38,9 @@ const Home = () => {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
-            <Button variant="outline" className="btn-secondary" asChild>
+{/*             <Button variant="outline" className="btn-secondary" asChild>
               <Link to="#tours-carousel">View Tours</Link>
-            </Button>
+            </Button> */}
           </div>
         </div>
       </section>
@@ -56,7 +56,7 @@ const Home = () => {
       </section>
 
       {/* Tours Carousel */}
-      <section id="tours-carousel" className="py-20 bg-background">
+{/*       <section id="tours-carousel" className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-section-title text-primary mb-4">Featured Journeys</h2>
@@ -74,7 +74,7 @@ const Home = () => {
             </Button>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Why Choose Lhomon */}
       <section className="py-20 bg-secondary/30">
