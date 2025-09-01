@@ -194,11 +194,9 @@ const About = () => {
                 Let our passionate local team design your perfect Bhutanese adventure. 
                 Every journey is crafted with care, respect, and deep cultural understanding.
               </p>
-              <Link to="/contact#enquiry">
-                <Button size="lg" variant="secondary" asChild>
-                  <a>Start Your Journey</a>
-                </Button>
-              </Link>
+              <Button size="lg" variant="secondary" asChild>
+                <Link to="/contact#enquiry">Start Your Journey</Link>
+              </Button>
             </CardContent>
           </Card>
         </section>
