@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import { Link } from "react-router-dom";
 
 const TravelGuide = () => {
   const guideData = [
@@ -91,11 +92,11 @@ const TravelGuide = () => {
                   <p className="text-sm text-muted-foreground">Spring (Mar-May) and autumn (Sep-Nov)</p>
                 </div>
               </div>
-              <div className="mt-6">
-                <Button asChild>
-                  <a href="/contact">Plan Your Trip</a>
-                </Button>
-              </div>
+            <div className="mt-6">
+              <Button asChild>
+                <Link to="/contact">Plan Your Trip</Link>
+              </Button>
+            </div>
             </CardContent>
           </Card>
         </section>
