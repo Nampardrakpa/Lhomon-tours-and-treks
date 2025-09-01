@@ -113,7 +113,7 @@ const Footer = () => {
                 Terms & Conditions
               </a>
             </div> */}
-          </div>
+{/*           </div> */}
         </div>
       </div>
     </footer>
