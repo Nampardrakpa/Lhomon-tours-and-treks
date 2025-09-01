@@ -14,7 +14,7 @@ import Footer from '@/components/Footer';
 import { Resend } from 'resend';
 
 // Initialize Resend with your API key
-const resend = new Resend('re_BJBMKyXs_HqoPkk4oZCGMZ2BWqKzncUV2');
+const resend = new Resend(import.meta.env.VITE_RESEND_API_KEY);
 
 const Contact = () => {
   const [searchParams] = useSearchParams();
