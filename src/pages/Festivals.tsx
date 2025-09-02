@@ -1,3 +1,13 @@
+import { useState } from 'react';
+import { Download } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
+import { galleryImages } from '@/data/galleryImages';
+
+const Gallery = () => {
+  const [selectedImage, setSelectedImage] = useState<typeof galleryImages[0] | null>(null);
 import { Calendar, MapPin, Clock } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -216,7 +226,8 @@ const Festivals = () => {
       ],
     },
   ];
-
+  
+const Festivals = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -224,10 +235,12 @@ const Festivals = () => {
       {/* Header */}
       <section className="py-16 bg-gradient-to-r from-primary to-primary-hover text-primary-foreground">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Bhutanese Festivals</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            Bhutanese Festivals
+          </h1>
           <p className="text-xl text-primary-foreground/90">
-            Experience the spiritual heart of Bhutan through its sacred celebrations and cultural
-            festivals
+            Experience the spiritual heart of Bhutan through its sacred
+            celebrations and cultural festivals
           </p>
         </div>
       </section>
@@ -236,9 +249,10 @@ const Festivals = () => {
         {/* Introduction */}
         <section className="mb-12 text-center">
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Bhutanese festivals, known as Tsechus, are the most vibrant expressions of the kingdom's
-            spiritual and cultural heritage. These sacred celebrations offer visitors a unique window
-            into the soul of Bhutan, where ancient traditions come alive through masked dances,
+            Bhutanese festivals, known as Tsechus, are the most vibrant
+            expressions of the kingdom's spiritual and cultural heritage. These
+            sacred celebrations offer visitors a unique window into the soul of
+            Bhutan, where ancient traditions come alive through masked dances,
             colorful ceremonies, and community gatherings.
           </p>
         </section>
@@ -249,7 +263,7 @@ const Festivals = () => {
             <Card key={festival.id} className="card-elevated overflow-hidden">
               <div
                 className={`grid lg:grid-cols-2 gap-0 ${
-                  index % 2 === 1 ? 'lg:flex-row-reverse' : ''
+                  index % 2 === 1 ? "lg:flex-row-reverse" : ""
                 }`}
               >
                 {/* Image */}
@@ -281,19 +295,28 @@ const Festivals = () => {
                     </div>
                   </div>
 
-                  <p className="text-muted-foreground mb-4">{festival.description}</p>
+                  <p className="text-muted-foreground mb-4">
+                    {festival.description}
+                  </p>
 
                   <div className="space-y-4">
                     <div>
-                      <h4 className="font-semibold mb-2">Cultural Significance</h4>
-                      <p className="text-sm text-muted-foreground">{festival.significance}</p>
+                      <h4 className="font-semibold mb-2">
+                        Cultural Significance
+                      </h4>
+                      <p className="text-sm text-muted-foreground">
+                        {festival.significance}
+                      </p>
                     </div>
 
                     <div>
                       <h4 className="font-semibold mb-2">Festival Highlights</h4>
                       <ul className="grid grid-cols-1 gap-1">
                         {festival.highlights.slice(0, 3).map((highlight, idx) => (
-                          <li key={idx} className="flex items-start gap-2 text-sm">
+                          <li
+                            key={idx}
+                            className="flex items-start gap-2 text-sm"
+                          >
                             <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
                             <span>{highlight}</span>
                           </li>
@@ -303,7 +326,9 @@ const Festivals = () => {
 
                     <div>
                       <h4 className="font-semibold mb-2">How to Attend</h4>
-                      <p className="text-sm text-muted-foreground">{festival.howToAttend}</p>
+                      <p className="text-sm text-muted-foreground">
+                        {festival.howToAttend}
+                      </p>
                     </div>
 
                     {festival.relatedTours.length > 0 && (
@@ -311,7 +336,12 @@ const Festivals = () => {
                         <h4 className="font-semibold mb-2">Related Tours</h4>
                         <div className="space-y-1">
                           {festival.relatedTours.map((tour, idx) => (
-                            <Button key={idx} variant="outline" size="sm" className="mr-2 mb-1">
+                            <Button
+                              key={idx}
+                              variant="outline"
+                              size="sm"
+                              className="mr-2 mb-1"
+                            >
                               {tour}
                             </Button>
                           ))}
@@ -341,7 +371,10 @@ const Festivals = () => {
                   <ul className="space-y-2 text-sm">
                     <li className="flex items-start gap-2">
                       <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                      <span>Festival dates are based on the lunar calendar and change each year</span>
+                      <span>
+                        Festival dates are based on the lunar calendar and
+                        change each year
+                      </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
@@ -349,12 +382,17 @@ const Festivals = () => {
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                      <span>Book accommodations well in advance during festival seasons</span>
+                      <span>
+                        Book accommodations well in advance during festival
+                        seasons
+                      </span>
                     </li>
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3">Respectful Participation</h4>
+                  <h4 className="font-semibold mb-3">
+                    Respectful Participation
+                  </h4>
                   <ul className="space-y-2 text-sm">
                     <li className="flex items-start gap-2">
                       <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
@@ -362,13 +400,47 @@ const Festivals = () => {
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                      <span>Photography restrictions may apply during sacred dances</span>
+                      <span>
+                        Photography restrictions may apply during sacred dances
+                      </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                      <span>Maintain quiet and respectful behavior during religious ceremonies</span>
+                      <span>
+                        Maintain quiet and respectful behavior during religious
+                        ceremonies
+                      </span>
                     </li>
                   </ul>
                 </div>
               </div>
-            </Card
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* Call to Action */}
+        <section className="mt-12 text-center">
+          <Card className="bg-gradient-to-r from-primary/5 to-accent/5 border-0">
+            <CardContent className="p-8">
+              <h2 className="text-2xl font-semibold text-primary mb-4">
+                Experience Bhutan's Sacred Festivals
+              </h2>
+              <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+                Join us for an authentic cultural immersion. Our local guides
+                provide deep insights into the spiritual significance and
+                cultural context of these sacred celebrations.
+              </p>
+              <Button size="lg" asChild>
+                <a href="/contact">Plan Your Festival Journey</a>
+              </Button>
+            </CardContent>
+          </Card>
+        </section>
+      </div>
+
+      <Footer />
+    </div>
+  );
+};
+
+export default Festivals;
