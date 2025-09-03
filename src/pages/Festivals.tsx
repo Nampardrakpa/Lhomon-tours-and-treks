@@ -1,27 +1,9 @@
-import { useState } from 'react';
-import { Download } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
-import { galleryImages } from '@/data/galleryImages';
-
-const Gallery = () => {
-  const [selectedImage, setSelectedImage] = useState<typeof galleryImages[0] | null>(null);
 import { Calendar, MapPin, Clock } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-
-// ✅ Import images properly (Vite will bundle them)
-import ThimphuTshechuImg from '../assets/ThimphuTshechu.jpg';
-import ParoTshechuImg from '../assets/ParoTshechu.jpg';
-import HaaSummerFestivalImg from '../assets/HaaSummerFestival.jpg';
-import JomolhariMountainFestivalImg from '../assets/JomolhariMountainFestival.jpg';
-import MatsutakeFestivalImg from '../assets/MatsutakeFestival.jpg';
-import BlackNeckedCraneFestivalImg from '../assets/blackneckedcranefestival.jpg';
 
 interface Festival {
   id: string;
@@ -52,7 +34,7 @@ const Festivals = () => {
         'Instituted by the 4th Desi, Gyalse Tenzin Rabgye, in 1670 to honor Guru Rinpoche (Padmasambhava). The Cham dances depict Buddhist teachings and stories, believed to purify sins, protect from misfortunes, and bring blessings to all attendees. The festival also reinforces Bhutanese cultural identity and devotion.',
       howToAttend:
         'No tickets required. Arrive early to secure space in the courtyard or upper galleries. Dress modestly in traditional or respectful attire. Photography is generally allowed but may be restricted during sacred moments.',
-      imageUrl: ThimphuTshechuImg,
+      imageUrl: new URL('../assets/ThimphuTshechu.jpg', import.meta.url).href,
       highlights: [
         'Mask and Cham dance performances by monks and laymen',
         'Blessing ceremonies by senior monks',
@@ -83,7 +65,7 @@ const Festivals = () => {
         'Paro Tsechu was introduced by Zhabdrung Ngawang Namgyal and later institutionalized by the first Je Khenpo, Ngawang Chhogyal, in the 17th century. The festival commemorates Guru Rinpoche (Padmasambhava), who brought Buddhism to Bhutan. The unfurling of the giant Thongdrel (religious scroll) is the highlight, believed to cleanse the sins of all who see it.',
       howToAttend:
         'Free for all attendees. Arrive early, especially on the final day for the Thongdrel unveiling. Dress respectfully in traditional or modest attire. Photography is generally permitted but restricted during specific sacred rituals.',
-      imageUrl: ParoTshechuImg,
+      imageUrl: new URL('../assets/ParoTshechu.jpg', import.meta.url).href,
       highlights: [
         'Sacred Cham mask dances performed by monks',
         'Atsara (clown) antics and blessings',
@@ -114,7 +96,7 @@ const Festivals = () => {
         'The Haa Summer Festival highlights the harmony between people, livestock, and nature in one of Bhutan’s most unspoiled regions. It preserves the semi-nomadic traditions of yak herders while promoting cultural exchange and tourism. The festival is also a showcase of Bhutanese resilience and community spirit.',
       howToAttend:
         'Open to all visitors. Best experienced with a local guide who can explain the cultural significance. Arrive early to enjoy traditional sports, local cuisine, and cultural performances. Homestay experiences in Haa Valley are highly recommended.',
-      imageUrl: HaaSummerFestivalImg,
+      imageUrl: new URL('../assets/HaaSummerFestival.jpg', import.meta.url).href,
       highlights: [
         'Traditional sports such as archery and khuru (dart game)',
         'Yak riding and yak herding demonstrations',
@@ -144,7 +126,7 @@ const Festivals = () => {
         'The festival highlights the unique traditions of Bhutan’s highland communities living near Mount Jomolhari. It promotes harmony between people and nature, particularly focusing on snow leopard conservation. By blending cultural celebration with environmental advocacy, the festival embodies Bhutan’s values of cultural preservation and environmental stewardship.',
       howToAttend:
         'Reaching the festival involves a trek (usually 2 days from Shana in Paro). Best suited for trekkers and adventurers who want to combine cultural immersion with a high-altitude experience. Guided tours are highly recommended.',
-      imageUrl: JomolhariMountainFestivalImg,
+      imageUrl: new URL('../assets/JomolhariMountainFestival.jpg', import.meta.url).href,
       highlights: [
         'Snow leopard conservation awareness programs',
         'Traditional folk dances and songs by highland communities',
@@ -175,7 +157,7 @@ const Festivals = () => {
         'The Matsutake Festival promotes sustainable harvesting of the valuable mushroom while supporting local livelihoods. It also showcases Bumthang’s rich culture, cuisine, and traditions. The festival connects conservation with community-based tourism, benefiting both locals and visitors.',
       howToAttend:
         'Open to all visitors. Best experienced with a local guide who can explain the cultural significance and arrange homestays in Ura Valley. Arrive early to enjoy mushroom foraging, cooking demonstrations, and cultural performances.',
-      imageUrl: MatsutakeFestivalImg,
+      imageUrl: new URL('../assets/MatsutakeFestival.jpg', import.meta.url).href,
       highlights: [
         'Matsutake mushroom foraging trips',
         'Traditional Bhutanese cooking demonstrations',
@@ -206,7 +188,7 @@ const Festivals = () => {
         'The festival raises awareness about the importance of protecting the black-necked cranes, which are considered sacred in Bhutanese culture. It fosters harmony between conservation and community livelihoods, while also offering blessings for a good harvest and well-being.',
       howToAttend:
         'The festival is open to all visitors and usually held on November 11th, coinciding with Bhutan’s National Day. Arrive early to secure a good spot in the courtyard of Gangtey Monastery. Guided tours are recommended for deeper cultural and ecological insight.',
-      imageUrl: BlackNeckedCraneFestivalImg,
+      imageUrl: new URL('../assets/blackneckedcranefestival.jpg', import.meta.url).href,
       highlights: [
         'Cultural dances by local schoolchildren, including the famous crane dance',
         'Mask dances performed by monks',
@@ -226,8 +208,7 @@ const Festivals = () => {
       ],
     },
   ];
-  
-const Festivals = () => {
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -414,25 +395,6 @@ const Festivals = () => {
                   </ul>
                 </div>
               </div>
-            </CardContent>
-          </Card>
-        </section>
-
-        {/* Call to Action */}
-        <section className="mt-12 text-center">
-          <Card className="bg-gradient-to-r from-primary/5 to-accent/5 border-0">
-            <CardContent className="p-8">
-              <h2 className="text-2xl font-semibold text-primary mb-4">
-                Experience Bhutan's Sacred Festivals
-              </h2>
-              <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                Join us for an authentic cultural immersion. Our local guides
-                provide deep insights into the spiritual significance and
-                cultural context of these sacred celebrations.
-              </p>
-              <Button size="lg" asChild>
-                <a href="/contact">Plan Your Festival Journey</a>
-              </Button>
             </CardContent>
           </Card>
         </section>
