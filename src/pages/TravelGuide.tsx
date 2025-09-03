@@ -92,11 +92,11 @@ const TravelGuide = () => {
                   <p className="text-sm text-muted-foreground">Spring (Mar-May) and autumn (Sep-Nov)</p>
                 </div>
               </div>
-            <div className="mt-6">
-              <Button asChild>
-                <Link to="/contact">Plan Your Trip</Link>
-              </Button>
-            </div>
+              <div className="mt-6">
+                <Button asChild>
+                  <Link to="/contact">Plan Your Trip</Link>
+                </Button>
+              </div>
             </CardContent>
           </Card>
         </section>
@@ -237,7 +237,7 @@ const TravelGuide = () => {
                 Let our local experts help you navigate the planning process and create your perfect Bhutanese adventure.
               </p>
               <Button size="lg" asChild>
-                <a href="/contact">Start Planning Your Trip</a>
+                <Link to="/contact">Start Planning Your Trip</Link>
               </Button>
             </CardContent>
           </Card>
