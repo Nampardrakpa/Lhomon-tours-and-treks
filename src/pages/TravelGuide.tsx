@@ -218,7 +218,7 @@ const TravelGuide = () => {
                 <div>
                   <h3 className="font-semibold mb-2">Lhomon Tours Contact</h3>
                   <ul className="space-y-1 text-sm">
-                    <li>24/7 Emergency: +975-17606694</li>
+                    <li>Phone: +975-17606694</li>
                     <li>Email: lhomontours@gmail.com</li>
                   </ul>
                 </div>
