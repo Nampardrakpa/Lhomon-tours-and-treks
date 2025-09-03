@@ -13,8 +13,8 @@ const TravelGuide = () => {
       icon: Shield,
       content: "Bhutan requires all visitors (except Indian, Bangladeshi, and Maldivian nationals) to obtain a visa. Most tourists can apply for a visa online through the Tourism Council of Bhutan's official portal. Required documents include a valid passport (minimum 6 months validity), passport photos, and completed application form.",
       links: [
-        { text: "Official Visa Information", url: "https://example.com/visa-info" },
-        { text: "Tourism Council of Bhutan", url: "https://example.com/tcb-official" }
+        { text: "Official Visa Information", url: "https://www.mfa.gov.bt/visa/" },
+        { text: "Tourism Council of Bhutan", url: "https://bhutan.travel/" }
       ]
     },
     {
